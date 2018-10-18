@@ -15,6 +15,12 @@ export default {
         }
     },
 
+    watch: {
+        $route(to, from) {
+            this.id = to.params.id
+        }
+    },
+
     methods: {
         navigateToHome() {
             this.$router.push('/')
