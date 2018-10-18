@@ -6,16 +6,25 @@ import Home from './components/Home.vue'
 import Header from './components/Header.vue'
 
 export const routes = [
-  { path: '', name: 'home', components: {
-    default: Home,
-    headerTop: Header
-  } },
-  { path: '/user', components: {
-    default: User,
-    headerBottom: Header
-  }, children: [
-    { path: '', component: UserStart },
-    { path: ':id', component: UserDetail },
-    { path: ':id/edit', component: UserEdit, name: 'userEdit' },
-  ] }
+  {
+    path: '',
+    name: 'home',
+    components: {
+      default: Home,
+      headerTop: Header
+    }
+  },
+
+  {
+    path: '/user',
+    components: {
+      default: User,
+      headerBottom: Header
+    },
+    children: [
+      { path: '', component: UserStart },
+      { path: ':id', component: UserDetail },
+      { path: ':id/edit', component: UserEdit, name: 'userEdit' },
+    ]
+  }
 ]
